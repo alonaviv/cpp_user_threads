@@ -7,10 +7,3 @@
 //{
 //
 //}
-
-
-Thread::~Thread()
-{
-    delete thread_buffer;
-    delete private_stack;
-}
