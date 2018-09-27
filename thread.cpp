@@ -23,9 +23,9 @@ address_t translate_address(address_t addr)
 }
 
 
-Thread::Thread(unsigned id): id(id), state(RUNNING) {setjmp(thread_buffer);}
+Thread::Thread(unsigned int id): id(id), state(RUNNING) {setjmp(thread_buffer);}
 
-Thread::Thread(unsigned id, void (*f)()): id(id), state(READY), private_stack(new char[PRIVATE_STACK_SIZE])
+Thread::Thread(unsigned int id, void (*f)()): id(id), state(READY), private_stack(new char[PRIVATE_STACK_SIZE])
 {
     address_t sp, pc;
     sp = (address_t)private_stack.get() + PRIVATE_STACK_SIZE - sizeof(address_t);
